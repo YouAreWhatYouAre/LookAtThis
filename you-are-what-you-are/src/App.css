@@ -1,38 +1,173 @@
 .App {
-  text-align: center;
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(#352082, #020531 35%);
+  position: relative;
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.3;
+  object-fit: contain;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  font-family: sans-serif;
+  color: #3c3c3c;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  flex-direction: column;
+  max-width: fit-content;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.container__main-caption {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    #020531 20%,
+    #44107a 30%,
+    #ff1361 40%,
+    #fff800 50%,
+    #ff1361 60%,
+    #44107a 70%,
+    #020531 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 3s ease-in-out infinite alternate;
+}
+.container__additional-caption {
+  align-self: flex-start;
+  text-align: center;
+  font-size: 50px;
+  background: -webkit-linear-gradient(45deg, #fff800, #ff1361 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.5;
+  margin: 62px 0 0;
+}
+
+.container__quantity-caption {
+  align-self: flex-start;
+  text-align: center;
+  margin: 320px auto 0;
+  font-size: 40px;
+  color: #5d3e7e;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+}
+
+.contacts__donut {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  text-decoration: none;
+}
+
+.contacts__donut:hover,
+.contacts__donut:active,
+.contacts__donut:focus {
+  background: url(./donut.png);
+  background-size: cover;
+  animation: donut 3s linear infinite;
+}
+
+@keyframes donut {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.contacts__text {
+  display: block;
+  height: 47px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 46px;
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  border: solid #b83db6 1px;
+  background: -webkit-linear-gradient(45deg, #fff800, #ff1361 50%);
+  border-radius: 80px;
+  text-shadow: 0px 0px 6px rgba(20, 20, 20, 0.8), 0px 0px 15px rgba(20, 20, 20, 0.9);
+  font-weight: bold;
+}
+
+.contacts__donut:hover .contacts__text {
+  display: none;
+}
+
+@media (max-width: 514px) {
+  .container__main-caption {
+    font-size: 70px;
+  }
+
+  .container__additional-caption {
+    margin-top: 30px;
+    font-size: 35px;
+  }
+
+  .container__quantity-caption {
+    margin-top: 150px;
+    font-size: 35px;
+  }
+
+  .contacts__donut {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    text-decoration: none;
+  }
+
+  .contacts__text {
+    height: 32px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .contacts {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
