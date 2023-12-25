@@ -23,10 +23,10 @@ function App() {
         <p className='container__additional-caption'>
           Любопытный, мне нравится
         </p>
-        <p className='container__quantity-caption'>
+        {/* <p className='container__quantity-caption'>
           Попалось:
           <span className='container__quantity-number'> {visitors}</span>
-        </p>
+        </p> */}
       </div>
       <div className='contacts'>
         <a
