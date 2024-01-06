@@ -1,7 +1,7 @@
 {
   "name": "you-are-what-you-are",
   "version": "0.1.0",
-  "homepage": "https://YouAreWhatYouAre.github.io/LookAtThis",
+  "homepage": "https://YouAreWhatYouAre.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
