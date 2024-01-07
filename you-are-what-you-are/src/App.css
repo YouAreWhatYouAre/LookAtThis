@@ -100,9 +100,7 @@
   text-decoration: none;
 }
 
-.contacts__donut:hover,
-.contacts__donut:active,
-.contacts__donut:focus {
+.contacts__donut:hover {
   background: url(./donut.png);
   background-size: cover;
   animation: donut 3s linear infinite;
@@ -129,7 +127,8 @@
   border: solid #b83db6 1px;
   background: -webkit-linear-gradient(45deg, #fff800, #ff1361 50%);
   border-radius: 80px;
-  text-shadow: 0px 0px 6px rgba(20, 20, 20, 0.8), 0px 0px 15px rgba(20, 20, 20, 0.9);
+  text-shadow: 0px 0px 6px rgba(20, 20, 20, 0.8),
+    0px 0px 15px rgba(20, 20, 20, 0.9);
   font-weight: 500;
 }
 
@@ -163,12 +162,18 @@
     width: 80px;
     height: 80px;
     text-decoration: none;
+    background: url(./donut.png);
+    background-size: cover;
+    animation: donut 5s linear infinite;
   }
 
   .contacts__text {
     height: 32px;
     font-size: 20px;
-    line-height: 32px;
+    line-height: 29px;
+    color: rgba(225, 171, 216, 0.804);
+    background: none;
+    border: none;
   }
 
   .contacts {
