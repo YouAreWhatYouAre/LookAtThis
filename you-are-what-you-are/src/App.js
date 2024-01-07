@@ -31,7 +31,7 @@ function App() {
       <div className='contacts'>
         <a
           className='contacts__donut'
-          href='https://pay.mysbertips.ru/32518683'
+          href='https://pay.cloudtips.ru/p/d0125371'
           target='_blank'
           rel='noreferrer'
         >
