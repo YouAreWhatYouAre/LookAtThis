@@ -3,15 +3,18 @@ import Hand from "./hand.png";
 import "./App.css";
 import "./vendor/normalize.css";
 import "./vendor/fonts/fonts.css";
-import countapi from "countapi-js";
+import axios from 'axios'
+
+const BASEURL = 'https://api.api-ninjas.com/v1/counter?id=visits&hit=true';
 
 function App() {
   const [visitors, setVisitors] = useState(0);
 
   useEffect(() => {
-    countapi.visits().then((result) => {
-      console.log(result.value);
-      setVisitors(result.value);
+    axios.get(BASEURL, {headers: { 'X-Api-Key': 'ZsuzYGkSeiiSSoGXpGVv0A==OJZmu6EW4aYuL5c1'}}).then((resp) => {
+      console.log(resp);
+      setVisitors(resp.data.value);
+  
     });
   }, []);
 
@@ -23,10 +26,10 @@ function App() {
         <p className='container__additional-caption'>
           Любопытный, мне нравится
         </p>
-        {/* <p className='container__quantity-caption'>
+        <p className='container__quantity-caption'>
           Попалось:
-          <span className='container__quantity-number'> {visitors}</span>
-        </p> */}
+          <span className='container__quantity-number'> {visitors > 0 ? visitors : '...'}</span>
+        </p>
       </div>
       <div className='contacts'>
         <a
