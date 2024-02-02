@@ -5,17 +5,16 @@ import "./vendor/normalize.css";
 import "./vendor/fonts/fonts.css";
 import axios from 'axios'
 
-const BASEURL = 'https://api.api-ninjas.com/v1/counter?id=visits&hit=true';
 
 function App() {
   const [visitors, setVisitors] = useState(0);
 
+  const BASEURL = 'https://api.api-ninjas.com/v1/counter?id=visits&hit=true';
+
   useEffect(() => {
     axios.get(BASEURL, {headers: { 'X-Api-Key': 'ZsuzYGkSeiiSSoGXpGVv0A==OJZmu6EW4aYuL5c1'}}).then((resp) => {
-      console.log(resp);
       setVisitors(resp.data.value);
-  
-    });
+    }).catch(err => console.log(err))
   }, []);
 
   return (
